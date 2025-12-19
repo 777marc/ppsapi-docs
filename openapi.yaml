@@ -20,14 +20,22 @@ paths:
           schema:
             type: "object"
             properties:
-              agentId:
+              agent_id:
                 type: "string"
                 description: "ID of the agent to retrieve"
               agent_profile:
                 type: "string"
                 description: "Profile of the agent"
+              calling_app:
+                type: "string"
+                description: "The application making the call"
+            required:
+              - agent_id
+              - agent_profile
+              - calling_app
           examples:
-            application/json: { agentId: "12345", agent_profile: "001" }
+            application/json:
+              { agent_id: "12345", agent_profile: "001", calling_app: "my_app" }
       responses:
         "200":
           description: "Successful response"
